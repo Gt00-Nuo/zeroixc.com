@@ -1,0 +1,8 @@
+package.json    # 文件
+node_modules/    # 目录
+
+/temp/run.txt    # 文件路径
+/src/temp/    # 目录路径
+
+*.log    # 匹配
+*.sw?    # 匹配
