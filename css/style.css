@@ -76,7 +76,7 @@
 }
 .music{
     width: 300px;
-    background-color: #808080;
+    /* background-color: #808080; */
     position:fixed;
 }
 .box {
