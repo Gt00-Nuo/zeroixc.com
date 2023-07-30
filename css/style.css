@@ -1,159 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
 *{
-    margin: auto;
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
 }
-:root{
-    /* 颜色 */
-    --body-color:#e4e9f7;
-    --sidebar-color:#fff;
-    --primary-color:#695cfe;
-    --primary-color-light:#f6f5ff;
-    --toggle-color:#ddd;
-    --text-color:#707070;
-
-    /* 过渡效果 */
-    --tran-02: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-}
-/* 添加样式 */
-.top{
-    background-color:#808080;
-    position: relative;
+body{
+    height: 100vh;
     width: 100%;
-    height: 50px;
-    text-align: center;
+    background: #000;
+  
 }
-/* 去除无序列表li标签的样式 */
-.top ul li {
-    list-style: none;
-    padding-left: 40%;
-}
-/* a标签样式 */
-.top ul li a {
-    /* 去除下划线 */
-    text-decoration:none;
-    /* 设置字体颜色 */
-    color: #000;
-    /* 字体大小 */
-    font-size: 20px;
-    width: 80px;
-    height: 20px;
-    float: left;
-    position: relative;
-    line-height: 100%;
-    text-align: center;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    background-color: #ddd;
+.background{
+    background: url(../images/backgroun3.jpg) no-repeat;
+    background-position: center;
+    background-size:cover ;
+    height: 100vh;
+    width: 100%;
+    filter: blur(10px);
 }
 
-.icon img{
-    width: 50px;
-    height: 50px;
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 13%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #fff;
     margin-right: 30px;
-    border-radius: 50px;
-    float: right;
+    text-decoration: none;
 }
-.top ul li a:hover {
-    background-color: #808080;
-    color: #ddd;
-    transition: background-color 0.8s ease;
-    transition: color 0.8s ease;
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+.search-bar{
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.search-bar input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.search-bar button{
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.search-bar input::placeholder{
+    color: #fff;
+}
+.search-bar button i{
+    font-size: 22px;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    height: 550px;
+    margin-top: 20px;
+    background: url(backgroun3.jpg) no-repeat;
+    background-position: center;
+    background-size:cover ;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    
+}
+.item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+
+
+}
+.item .logo{
+    color: #fff;
+    font-size: 30px;
+
+}
+.text-item h2{
+    font-size: 40px;
+    line-height: 1;
+}
+.text-item p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+.social-icon a i{
+    color: #fff;
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.social-icon a:hover i{
+    transform: scale(1.2);
+}
+.container .login-section{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    color: #fff;
+    backdrop-filter: blur(10px);
 }
 
-.body {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    position: relative;
-}
-.body div{
-    /* background-color: #000; */
-    /* width: 100%; */
-    position: relative;
-}
-.music{
-    width: 300px;
-    /* background-color: #808080; */
-    position:fixed;
-}
-.box {
-    position: relative;
-    width: 300px;
-    height: 280px;
-    background-color: #414141;
-    border-radius: 20px;
+.login-section .form-box{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    float: right;
-}
-.box p {
-    color: white;
-    font-size: 4em;
-    text-shadow: 2px 2px pink;
-    z-index: 1;
-
-}
-.box::before {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 350%;
-    background: 
-    linear-gradient(#00ccff,#d500f9);
-    animation: rotate 4s linear infinite;
-
-}
-
-@keyframes rotate {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-.box::after {
-    content: "";
-    position: absolute;
-    background: hsl(0, 0%, 47%);
-    inset: 5px;
-    border-radius: 20px;
-}
-.body div img {
     width: 100%;
-    border-radius: 20px;
+    height: 100%;
+    
+}
+.login-section .form-box.register{
+    transform: translateX(430px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+.login-section.active .form-box.register{
+    transform: translateX(0px);
+    transition-delay: .7s;
 }
 
-/* 设置dock栏的背景颜色 */
-/* .dock {
-    overflow: hidden;
-    background-color: gray;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 58px;
+.login-section .form-box.login{
+    transform: translateX(0px);
+    transition: transform .6s ease;
+    transition-delay: 0.7s;
+}
+.login-section.active .form-box.login{
+    transform: translateX(430px);
+    transition-delay: 0s;
 }
 
-  /* 设置dock栏中每个链接的样式 */
-/* .dock a {
-    float: left;
-    display: block;
-    color: gray;
+
+
+.login-section .form-box h2{
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-} */
+    font-size: 25px;
+}
 
-/* 设置dock栏中每个链接的鼠标悬停样式 */
-/* .dock a:hover {
-    background-color: gray;
-    color: black;
-    transition: background-color 0.8s ease;
-    transition: color 0.8s ease;
-} */ 
+.form-box .input-box{
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid#fff;
+    margin: 30px 0;
+    position: relative;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+
+
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600px;
+    pointer-events: none;
+    transition: .5s ease;
+
+}
+.input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.input-box input:focus~ label,
+.input-box input:valid~ label{
+    top: -5px;
+}
+.remember-password{
+    font-size: 14px;
+    font-weight: 500;
+    margin: -15px 0 15px ;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-password label input{
+    accent-color: #fff;
+    margin-right: 3px;
+
+}
+.remember-password a{
+    color: #fff;
+    text-decoration: none;
+}
+.remember-password a:hover{
+    text-decoration: underline;
+}
+.btn{
+    background: #fff;
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f72d7a;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: rgba(0,0,0,0.4);
+
+}
+.create-account{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+}
+.create-account p a{
+    color: #fff;
+    font-weight: 600px;
+    text-decoration: none;
+}
+.create-account p a:hover{
+    text-decoration: underline;
+}
