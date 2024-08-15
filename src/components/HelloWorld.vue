@@ -1,20 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-// export default{
-//     data(){
-//         return{
-//             dynameClass:"appclass",
-//             dynameId:"appid",
-//             isButtonDisabled:false,
-//             objectOfAttres:{
-//                 class:"appclass",
-//                 id:"appid"
-//             }
-//         }
-//     }
-// }
-const awesome = ref(false)
+const awesome = ref(true)
 const dynameId="appid"
 const dynameClass="appclass"
 
@@ -24,13 +11,21 @@ function toggle() {
 
 </script>
 <template>
-    <div :id="dynameId" :class="dynameClass" v-if=awesome>objectOfAttres</div>
-    <div :id="dynameId" :class="dynameClass" v-else>test</div>
-    <button v-on:click="toggle">click</button>
+    <div class="hello">
+        <p>&nbsp;</p>
+        <div :id="dynameId" :class="dynameClass" v-if=awesome>test</div>
+        <div :id="dynameId" :class="dynameClass" v-else>change</div>
+        <button v-on:click="toggle">click change</button>
+        <p>&nbsp;</p>
+    </div>
 </template>
 
 <style>
-
+.hello{
+    background-color: #add8fb;
+    border-radius: 25px;
+    text-align: center;
+}
 .appclass{
     color: #ec261b;
     font-size: 30px;
